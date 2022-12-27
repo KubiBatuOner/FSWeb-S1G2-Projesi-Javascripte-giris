@@ -20,6 +20,14 @@ Aşağıdakileri yapın:
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
 
+var surucuYasi = 15;
+
+if (surucuYasi > 18) {
+  console.log("True");
+} 
+else {
+  console.log("False");
+}
 
 
 /*
@@ -34,6 +42,16 @@ Aşağıdakileri yapınız:
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
 
+var a = 2;
+var b = 5;
+
+if (a < b) {
+  var a = 7;
+  console.log(a);
+}
+else{
+  var a = 2;
+}
 
 
 
@@ -49,6 +67,9 @@ Aşağıdakileri yapın:
    İPUCU: Number metoduna bakabilirsin
 */
 
+let x;
+x = Number("1999");
+console.log(x);
 
 
 
@@ -61,10 +82,15 @@ Aşağıdakileri yapın:
    3. a ve b'yi çarpıp, sonucu dönün
 */
 
-function carpma(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function carpma(a, b){
+  
+let sonuc = a * b;
+
+return sonuc;
+
 }
 
+console.log(carpma(9,8));
 
 
 
@@ -77,11 +103,15 @@ Aşağıdakileri yapın:
  3. Hesaplanan köpeğin yaşını dönün.
  */
 
-function kopeginYasi(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function kopeginYasi(a){
+  
+let kopeginYasi = a * 7
+
+return kopeginYasi;
+
 }
 
-
+console.log(kopeginYasi(7));
 
 /* Görev 3 */
 
@@ -104,9 +134,50 @@ Aşağıdakileri oyun isimli fonksiyonu kullanarak yapın.
 OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı yener | veya beraberlik olur.
 */
 
-function oyun(oyuncu, bilgisayar){
-  /*buraya kodunu yazabilirsin*/
+
+function bilgisayarinSecimi() {
+
+  let değer = Math.floor(Math.random() * 3);
+
+  if (değer === 0) {
+    return "Taş";
+  }
+  if (değer === 1) {
+    return "Kağıt";
+  } else {
+    return "Makas";
+  }
 }
+
+function oyun(oyuncununSecimi, bilgisayarinSecimi) {
+
+  let sonuc1 = "Kazandın!";
+  let sonuc2 = "Kaybettin!";
+  let sonuc3 = "Beraberlik";
+
+  if (
+    (oyuncununSecimi === "Taş" && bilgisayarinSecimi === "Makas") ||
+    (oyuncununSecimi === "Makas" && bilgisayarinSecimi === "Kağıt") ||
+    (oyuncununSecimi === "Kağıt" && bilgisayarinSecimi === "Taş")
+
+  ) {
+
+    return sonuc1;
+
+  } 
+  else if (oyuncununSecimi === bilgisayarinSecimi) {
+
+    return sonuc3;
+
+  } 
+  else {
+
+    return sonuc2;
+  }
+}
+console.log(oyun("Makas", bilgisayarinSecimi()));
+
+
 
 
 
@@ -120,9 +191,14 @@ Aşağdakileri milDonusturucu fonksiyonunu kullanarak yapın:
 3. Mil değerini geri dönün
 */
 
-function milDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+
+function milDonusturucu(km){
+
+return  0.621371 * km;
+
 }
+
+console.log(milDonusturucu(5))
 
 
 
@@ -134,9 +210,13 @@ Aşağıdakileri feetDonusturucu fonsiyonunu kullanarak yapın:
 3. feet değerini geri dönün
 */
 
-function feetDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function feetDonusturucu(w){
+
+  let feetDonusturucu = w / 30.48;
+  return feetDonusturucu;
+
 }
+console.log(feetDonusturucu(2000))
 
 
 
@@ -153,9 +233,16 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yapın:
 4. Bu döngüde, her seferinde cocukSarkisi fonsiyonu çalışsın ve console.log'a dönen metni yazdırsın.
 */
 
-function cocukSarkisi(/*buraya kodunu yazabilirsin*/){
-      /*buraya kodunu yazabilirsin*/
+function cocukSarkisi(x){
+
+  return x +  " küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!"
 }
+
+for (let i = 5; i > 0; i--) {
+
+  console.log(cocukSarkisi(i))
+}
+
 
 
 /* Görev 6 : Not Hesaplayıcı */
@@ -173,9 +260,45 @@ Aşağdakileri notHesapla fonksiyonunda yapın.
  dönün
 */
 
-function notHesapla(/*buraya kodunu yazabilirsin*/){
-/*buraya kodunu yazabilirsin*/
+function notHesapla(n){
+
+  var harf;
+
+  if (n >= 90 && n <= 100) {
+    
+    harf = 'A aldın';
+    
+  }
+
+  if (n >= 80 && n <= 89) {
+    
+    harf = 'B aldın';
+    
+  }
+
+  if (n >= 70 && n <= 79) {
+    
+    harf = 'C aldın';
+    
+  }
+
+  if (n >= 60 && n <= 69) {
+    
+    harf = 'D aldın';
+    
+  }
+
+  if (n < 60) {
+    
+    harf = 'F aldın';
+    
+  }
+  
+  return harf;
+
 }
+
+console.log(notHesapla(88))
 
 
 
@@ -191,9 +314,33 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yapın.
 */
 
 
-function sesliHarfSayaci(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+
+
+function sesliHarfSayaci(kelime) {
+  
+{
+  
+  var sesli = 0;
+ 
+  for (let i = 0; i < kelime.length; i++) {
+    var harf = kelime.charAt(i);
+
+    if (harf === 'a' || harf === 'e' || harf === 'ı' || harf === 'i' || harf === 'o' || harf === 'ö' || harf === 'u' || harf === 'ü'
+    || harf === 'A' || harf === 'E' || harf === 'I' || harf === 'İ' || harf === 'O' || harf === 'Ö' || harf === 'U' || harf === 'Ü') {
+
+      sesli++;
+      
+    }
+
+  }
+
+ return sesli
+
 }
+
+}
+
+console.log(sesliHarfSayaci("bİlgisAyAr"))
 
 
 
